@@ -1,84 +1,28 @@
 # README
 
-## Reproduction instructions
+## Creating a repo off this template
 
-### GitHub Codespaces
+- Click the green button in the top right, `Use this template`, and then `Create a new repository`.
+- From there, you can fill in the details.
+- To edit the repo further, you either:
+  - work on it locally after cloning the repo (`git clone https://github.com/<user_name>/<repo_name>`), or
+  - work on it remotely in a pre-configured `R` environment using a GitHub codespace.
+    - To use it as a GitHub codespace, on the repo homepage click the green `<> Code` button and then the green `Create codespace on main` button.
+    - Note that you have 30 hours per month free by default in GitHub codespaces, but 45 hours free if you have GitHub Pro.
+    - You can get GitHub Pro for free by getting the GitHub Student Developer pack, which you can sign up for [here](https://education.github.com/benefits?type=student).
 
-- Ensure that the GitHub Codespace has access to the following environment variables:
-  - `GITHUB_USERNAME`: your GitHub user name
-  - `GITHUB_PAT`: PAT for GitHub
-  - *If project uses XetHub*:
-    - `XETHUB_USERNAME`: Username for XetHub
-    - `XETHUB_EMAIL`: Email address for XetHub
-    - `XETHUB_PAT`: PAT for XetHub
-- Open GitHub Codespace
-- Start `R`, and run `projr_build_dev` in the directory of the repo whose results you wish to reproduce.
+## Template structure
 
-### HPC/local Linux
+All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.
 
-Before running below, make sure of the following:
+The GitHub repo should have the following structure:
 
-- Ensure apptainer/singularity is loaded (on the HPC) or installed (locally):
-  - Run `apptainer --version` or `singularity --version` to check
-  - If you can install it, then install apptainer using the following script:
-```
-set -e
-apt-get update
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:apptainer/ppa
-apt-get update
-apt-get install -y apptainer
-# as singularity mounts localtime
-# source: https://carpentries-incubator.github.io/singularity-introduction/07-singularity-images-building/index.html#using-singularity-run-from-within-the-docker-container
-apt-get install -y tzdata
-cp /usr/share/zoneinfo/Europe/London /etc/localtime
-```
+- `README`: Short project description and data dictionary
+- `written-report.qmd` & `written-report.pdf`: Final written report
+- `data/`: Folder that contains the data set for the final project.
+- `previous-work`: Folder that contains the topic-ideas and project-proposal files.
+- `presentation`: Folder with the presentation slides.
+  - If your presentation slides are online, you can put a link to the slides in a README.md file in the presentation folder.
 
-- The following environmennt variables are set:
-  - `GITHUB_USERNAME`: your GitHub user name
-  - `GITHUB_PAT`: PAT for GitHub
-  - *If project uses XetHub*:
-    - `XETHUB_USERNAME`: Username for XetHub
-    - `XETHUB_EMAIL`: Email address for XetHub
-    - `XETHUB_PAT`: PAT for XetHub
-- The libraries are set to an appropriate directory (on an HPC, often the home directory is restricted in terms of size), by adding something like this to `~/.bashrc`:
-
-```bash
-# R renv library
-export RENV_PATHS_CACHE="/scratch/$USER/.local/R/lib/renv"
-export RENV_PATHS_LIBRARY_ROOT="/scratch/$USER/.local/.cache/R/renv"
-export RENV_PATHS_LIBRARY="/scratch/$USER/.local/.cache/R/renv"
-export RENV_PREFIX_AUTO=TRUE
-
-# R library
-export R_LIBS="/scratch/$USER/.local/lib/R"
-mkdir -p $R_LIBS
-```
-
-- The cache directory for singularity/apptainer is also set to a place you can have large/many files:
-
-```bash
-mkdir -p /scratch/$USER/.local/.cache/apptainer
-export SINGULARITY_CACHEDIR=/scratch/$USER/.local/.cache/apptainer
-export APPTAINER_CACHEDIR=/scratch/$USER/.local/.cache/apptainer
-```
-
-- Download all the code:
-
-```
-# download apptainer image (will work in singularity)
-wget https://github.com/MiguelRodo/ApptainerBuildR/releases/download/r4.3.x/r43x.sif # 4.3.2
-# run all commands in apptainer image
-apptainer shell r43x.sif
-# log into github
-github-login
-# clone comp repo
-git clone https://github.com/SATVILab/CompACSCyTOFTCells.git
-# clone other repos
-cd CompACSCyTOFTCells
-repos-clone-github
-repos-clone-xethub
-cd ..
-```
-
-- Start `R`, and run `projr_build_dev` in the directory of the repo whose results you wish to reproduce.
+Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo.
+The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.

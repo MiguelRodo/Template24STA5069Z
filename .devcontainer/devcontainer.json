@@ -10,8 +10,6 @@
 {
 	"image": "ghcr.io/rocker-org/devcontainer/geospatial:4",
 	"features": {
-		"ghcr.io/MiguelRodo/DevContainerFeatures/git-xet:1": {},
-		"ghcr.io/MiguelRodo/DevContainerFeatures/repos:1": {},
 		"ghcr.io/MiguelRodo/DevContainerFeatures/config-r:1": {}
 	},
 	"customizations": {
