@@ -21,8 +21,8 @@ The GitHub repo should have the following structure:
 - `README`: Short project description and data dictionary
 - `written-report.qmd` & `written-report.pdf`: Final written report
 - `data/`: Folder that contains the data set for the final project.
-- `previous-work`: Folder that contains the topic-ideas and project-proposal files.
-- `presentation`: Folder with the presentation slides.
+- `previous-work/`: Folder that contains the topic-ideas and project-proposal files.
+- `presentation`/: Folder with the presentation slides.
   - If your presentation slides are online, you can put a link to the slides in a README.md file in the presentation folder.
     - GitHub can host one for free via GitHub Pages. Google for details.
 
