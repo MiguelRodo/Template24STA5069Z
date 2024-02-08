@@ -10,6 +10,7 @@
     - To use it as a GitHub codespace, on the repo homepage click the green `<> Code` button and then the green `Create codespace on main` button.
     - Note that you have 30 hours per month free by default in GitHub codespaces, but 45 hours free if you have GitHub Pro.
     - You can get GitHub Pro for free by getting the GitHub Student Developer pack, which you can sign up for [here](https://education.github.com/benefits?type=student).
+    - Small note: you need to `R` terminal. In an open terminal (`Ctrl + Shift + \backtick` if there is not one), type `radian` (to get a better `R` terminal, somewhat like the `RStudio` terminal) or `R` (to get the awful, standard `R` terminal).
 
 ## Template structure
 
@@ -23,6 +24,7 @@ The GitHub repo should have the following structure:
 - `previous-work`: Folder that contains the topic-ideas and project-proposal files.
 - `presentation`: Folder with the presentation slides.
   - If your presentation slides are online, you can put a link to the slides in a README.md file in the presentation folder.
+    - GitHub can host one for free via GitHub Pages. Google for details.
 
 Points for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo.
 The repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable.
