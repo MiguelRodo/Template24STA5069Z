@@ -1,7 +1,6 @@
 ---
 title: <report_title>
 author: <who_is_you>
-bibliography: zotero.bib
 format:
   pdf:
     embed-resources: true
