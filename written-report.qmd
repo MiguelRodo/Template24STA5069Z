@@ -1,0 +1,12 @@
+---
+title: <report_title>
+author: <who_is_you>
+bibliography: zotero.bib
+format:
+  pdf:
+    embed-resources: true
+---
+
+## Introduction
+
+Whilst researching multivariate analysis techniques, I accidentally solved world peace. Read on for how.
